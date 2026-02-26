@@ -3,39 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travelo Adventures</title>
+    <title>Travelo Adventures - Live Lavishly. Wander Farther.</title>
+    <!-- Google Fonts Embed Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+     <!-- CSS stylesheet -->
     <link rel="stylesheet" href="./travel_recommend.css">
 </head>
 <body>
     <header>
         <nav class="container">
-            <div><img src="./assets/travelo_advent.png" height="60px" alt=""></div>
-            <div>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
+            <div class="logo_links">
+                <div><img class="logo" src="./assets/travelo_advent.png" alt=""></div>
+                <div>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
             <div>
-                <input type="text">
-                <button>Search</button>
-                <button>Reset</button>
+                <input class="nav_input" type="text">
+                <button class="nav_btn">Search</button>
+                <button class="nav_btn">Reset</button>
             </div>
         </nav>
     </header>
     <main>
         <section id="home">
+            <h1>The World Is Your Playground. Experience It Extravagantly.</h1>
             <article>
-                <h1></h1>
-                <p></p>
+                <p>Escape the ordinary and dive into a world of curated, high-end travel. From private yachting in the Cyclades to bespoke desert safaris in Namibia, Travelo Adventures turns your dream vacations into reality with unmatched opulence, personalized concierge service, and unforgettable experiences in every corner of the globe.</p>
+                <button class="cta_btn">Explore Bespoke Journeys</button>
             </article>
         </section>
         <section id="about">
-            <article></article>
+            <h3>Travelo Adventures: Redefining Global Exploration</h3>
+            <article>
+                <h4>Our Philosophy</h4>
+                <p>We blend high-octane adventure with ultimate refinement. From private helicopter arrivals at remote five-star lodges to exclusive access to ancient wonders, we guarantee deep exploration in absolute comfort.</p>
+            <!-- Three Column Grid -->
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="./assets/pexels-justin-shaifer-501272-1222271.jpg" alt="Sarah Johnson - CEO">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4 class="member-name">Michael Chennet</h4>
+                        <p class="member-tagline">"Engineering the Impossible, Everywhere."</p>
+                        <p class="member-bio">The master of bespoke logistics who turns "no" into "now," specializing in ultra-exclusive access and high-stakes itinerary design.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="./assets/pexels-olly-720598.jpg" alt="Michael Chen - Lead Developer">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4 class="member-name">Sarah Johnson</h4>
+                        <p class="member-tagline">"Finding the World’s Best-Kept Secrets."</p>
+                        <p class="member-bio">Our boots-on-the-ground tastemaker who personally vets every villa and hidden gem to ensure every mile meets our gold standard.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="./assets/pexels-mattycphoto-1062280.jpg" alt="Elena Rodriguez - Creative Director">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4 class="member-name">Elena Rodriguez</h4>
+                        <p class="member-tagline">"Uncompromising Luxury, Total Peace of Mind."</p>
+                        <p class="member-bio">The elite specialist who bridges the gap between adrenaline and elegance, ensuring your most daring adventures are flawlessly secure.</p>
+                    </div>
+                </div>
+            </div>
+            </article>
         </section>
         <section id="contact">
-            <article></article>
+            <h3>Tell us where you want to go.</h3>
+            <article>
+                <!-- Contact Form -->
+                <!-- Form -->
+            <form action="#" method="POST">
+                <div>
+                <!-- Name Input -->
+                <div class="form-box">
+                    <label for="name">Name</label><br>
+                    <input type="text" id="name" name="name" placeholder="Julian Thorne">
+                </div>
+        
+                <!-- Email Input -->
+                <div class="form-box">
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="julian@travelo.com">
+                </div>
+                </div>
+        
+                <!-- Destination Input -->
+                <div class="form-box">
+                <label for="destination">Dream Destination</label><br>
+                <input type="text" id="destination" name="destination" placeholder="Amalfi Coast, Antarctica, Gobi Desert...">
+                </div>
+        
+                <!-- Vision Textarea -->
+                <div class="form-box">
+                <label for="vision">Your Vision</label><br>
+                <textarea id="vision" name="vision" rows="2" placeholder="How can we make it extraordinary?"></textarea>
+                </div>
+        
+                <!-- Submit Button -->
+                <div>
+                <button class="cta_btn" type="submit" style="width:32rem;">Design My Journey</button>
+                </div>
+            </form>
+            </article>
         </section>
     </main>
     <!-- Footer -->

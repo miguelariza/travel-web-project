@@ -10,9 +10,9 @@ html {
     scroll-snap-type: y mandatory;
 }
  body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: white;
     overflow-x: hidden;
  }
 
@@ -20,8 +20,6 @@ html {
  header {
     position: sticky;
     top: 0;
-    background: transparent;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 100;
     padding-left: 0.2rem;
     padding-right: 1rem;
@@ -30,6 +28,11 @@ html {
 .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.logo_links {
+    display: flex;
     align-items: center;
 }
 
@@ -61,8 +64,8 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
 }
 
 /* Optional: Different background colors for sections */
@@ -76,16 +79,198 @@ section {
 
 #about {
     background-color: #333;
-    background-image: url('./assets/pexels-pixabay-358532.jpg');
+    background-image: url('./assets/pexels-blitzboy-1144176.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #contact {
-    background-color: aqua;
+    background-color: black;
+    opacity: 0.8;
     background-image: url('./assets/pexels-agk42-2816903.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+/* Font styles */
+#home h1 {
+    font-size: 4rem;
+    text-align: left;
+    line-height: 5rem;
+    padding-left: 4rem;
+    padding-right: 3rem;
+    color: #d5f8ff;
+}
+
+#home article {
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-left: 4rem;
+    padding-right: 3rem;
+    color: #3b434b;
+}
+
+#about article,
+#contact article {
+    font-size: 1rem;
+    padding-left: 4rem;
+    padding-right: 3rem;
+    color: #d5f8ff;
+}
+
+#about h3,
+#contact h3 {
+    font-size: 2rem;
+    padding-left: 4rem;
+    padding-right: 3rem;
+    color: #d5f8ff;
+}
+
+#about h4,
+#contact h4 {
+    font-size: 1rem;
+    padding-top: 1rem;
+}
+
+/* Three Column Grid Layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+/* Team Card Styling */
+.team-card {
+    background:#d5f8ff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Image Container */
+.member-image {
+    position: relative;
+    width: 100%;
+    padding-top: 40%; /* Creates a square aspect ratio */
+    overflow: hidden;
+}
+
+.member-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .member-image img {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-card:hover .image-overlay {
+    opacity: 1;
+}
+
+/* Member Information */
+.member-info {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    background: #d5f8ff;
+    flex-grow: 1;
+}
+
+.member-name {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    padding-top: 0;
+    color: rgba(16, 16, 26, 0.973);
+}
+
+.member-tagline {
+    font-size: 0.9rem;
+    color: #667eea;
+    font-style: italic;
+    margin-bottom: 4px;
+    font-weight: 500;
+    padding-bottom: 4px;
+}
+
+.member-bio {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+button {
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.nav_btn {
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+}
+
+input, textarea {
+    padding: 12px 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 32rem;
+}
+
+.nav_input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 16rem;
+}
+
+.cta_btn {
+    background-color: #FF4949;
+    color: #fff;
+}
+
+.form-box {
+    margin-top: 0.8rem;
+}
+
+.logo {
+    height:50px;
 }
