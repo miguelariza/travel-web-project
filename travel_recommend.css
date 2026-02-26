@@ -20,7 +20,7 @@ html {
  header {
     position: sticky;
     top: 0;
-    background: white;
+    background: transparent;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 100;
     padding-left: 0.2rem;
@@ -50,4 +50,42 @@ nav a {
 
 nav a:hover {
     color: #007bff;
+}
+
+/* Section styling with 100vh */
+section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 80px 20px 20px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Optional: Different background colors for sections */
+#home {
+    background-color: #007bff;
+    background-image: url('./assets/pexels-aulsh99-2882660.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#about {
+    background-color: #333;
+    background-image: url('./assets/pexels-pixabay-358532.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#contact {
+    background-color: aqua;
+    background-image: url('./assets/pexels-agk42-2816903.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
