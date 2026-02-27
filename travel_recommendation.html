@@ -25,13 +25,34 @@
                 </div>
             </div>
             <div>
-                <input class="nav_input" type="text">
+                <input class="nav_input" type="text" id="search_input" placeholder="Enter your destination">
                 <button id="togglePanel" class="nav_btn" onclick="togglePanel()">Search</button>
-                <button class="nav_btn">Reset</button>
+                <button class="nav_btn" id="resetSearch" onclick="resetSearch()">Reset</button>
             </div>
         </nav>
     </header>
-    <div id="mySidePanel" class="mySidePanel"></div>
+    <div id="mySidePanel" class="mySidePanel">
+        <div>
+            <div>
+                <a href="javascript:void(0)" class="close" onclick="closeNav()">×</a>
+            </div>
+            <div id="destination-card" class="destination-card">
+                <div class="destination-image">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500" alt="Paris, France - Eiffel Tower">
+                    <div class="image-overlay">
+                        <span class="location-tag">🇫🇷 Europe</span>
+                    </div>
+                </div>
+                <div class="destination-info">
+                    <div class="city-header">
+                        <h3 class="city-name">Paris</h3>
+                        <span class="country">France</span>
+                    </div>
+                    <p class="city-description">The City of Light dazzles with iconic landmarks, world-class cuisine, and romantic atmosphere. Home to the Eiffel Tower, Louvre Museum, and charming cafés.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <main>
         <section id="home">
             <h1>The World Is Your Playground. Experience It Extravagantly.</h1>
