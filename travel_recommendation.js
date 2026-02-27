@@ -73,8 +73,8 @@ function searchCondition() {
             console.log('Temples data not found or not in expected format');
         }
 
-        console.log("Search results:", results);
-        //displayResults(results);
+        //console.log("Search results:", results);
+        displayResults(results);
     })
     .catch(error => console.error('Error:', error));
 }
@@ -82,22 +82,21 @@ function searchCondition() {
 function displayResults(results) {
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
-
+    console.log(results.length);
     for (let i = 0; i < results.length; i++) {
-        console.log(results[i].city.name);
+        console.log(results[i]);
+        //resultDiv.innerHTML += `<div id="destination-card" class="destination-card">`;
+        //resultDiv.innerHTML += `<div class="destination-image">`;
+        //resultDiv.innerHTML += `<img src="${results[i].imageUrl}" alt="${results[i].name}">`;
+        //resultDiv.innerHTML += `<div class="image-overlay">`;
+        //resultDiv.innerHTML += `<span class="location-tag">🇫🇷 Europe</span>`;
+        //resultDiv.innerHTML += `</div></div>`;
+        //resultDiv.innerHTML += `<div class="destination-info">`;
+        //resultDiv.innerHTML += `<div class="city-header">`;
+        //resultDiv.innerHTML += `<h3 class="city-name">${results[i].name}</h3>`;
+        //resultDiv.innerHTML += `<span class="country">France</span>`;
+        //resultDiv.innerHTML += `</div>`;
+        //resultDiv.innerHTML += `<p class="city-description">${results[i].description}</p>`;
+        //resultDiv.innerHTML += `</div></div>`;
     }
-
-    //resultDiv.innerHTML += `<div id="destination-card" class="destination-card">`;
-    //resultDiv.innerHTML += `<div class="destination-image">`;
-    //resultDiv.innerHTML += `<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500" alt="Paris, France - Eiffel Tower">`;
-    //resultDiv.innerHTML += `<div class="image-overlay">`;
-    //resultDiv.innerHTML += `<span class="location-tag">🇫🇷 Europe</span>`;
-    //resultDiv.innerHTML += `</div></div>`;
-    //resultDiv.innerHTML += `<div class="destination-info">`;
-    //resultDiv.innerHTML += `<div class="city-header">`;
-    //resultDiv.innerHTML += `<h3 class="city-name">Paris</h3>`;
-    //resultDiv.innerHTML += `<span class="country">France</span>`;
-    //resultDiv.innerHTML += `</div>`;
-    //resultDiv.innerHTML += `<p class="city-description">The City of Light dazzles with iconic landmarks, world-class cuisine, and romantic atmosphere. Home to the Eiffel Tower, Louvre Museum, and charming cafés.</p>`;
-    //resultDiv.innerHTML += `</div></div>`;
 }
