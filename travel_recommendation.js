@@ -41,8 +41,9 @@ function searchCondition() {
             
             matchingCities.forEach(city => {
                 results.push({
-                    country: country.name,
-                    city: city
+                    //country: country.name,
+                    type: "city", 
+                    properties: city
                 });
             });
         });
@@ -52,7 +53,8 @@ function searchCondition() {
             if (temple.name.toLowerCase().includes(searchTerm)) {
                 console.log('Found temple:', temple.name);
                 results.push({
-                    temple: temple
+                    type: "temple",
+                    properties: temple
                 });
             }
             });
@@ -65,7 +67,8 @@ function searchCondition() {
             if (beach.name.toLowerCase().includes(searchTerm)) {
                 console.log('Found temple:', beach.name);
                 results.push({
-                    beach: beach
+                    type: "beach",
+                    properties: beach
                 });
             }
             });
@@ -82,21 +85,22 @@ function searchCondition() {
 function displayResults(results) {
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
-    console.log(results.length);
+    //console.log(results.length);
     for (let i = 0; i < results.length; i++) {
-        console.log(results[i]);
-        //resultDiv.innerHTML += `<div id="destination-card" class="destination-card">`;
-        //resultDiv.innerHTML += `<div class="destination-image">`;
-        //resultDiv.innerHTML += `<img src="${results[i].imageUrl}" alt="${results[i].name}">`;
-        //resultDiv.innerHTML += `<div class="image-overlay">`;
-        //resultDiv.innerHTML += `<span class="location-tag">🇫🇷 Europe</span>`;
-        //resultDiv.innerHTML += `</div></div>`;
-        //resultDiv.innerHTML += `<div class="destination-info">`;
-        //resultDiv.innerHTML += `<div class="city-header">`;
-        //resultDiv.innerHTML += `<h3 class="city-name">${results[i].name}</h3>`;
-        //resultDiv.innerHTML += `<span class="country">France</span>`;
-        //resultDiv.innerHTML += `</div>`;
-        //resultDiv.innerHTML += `<p class="city-description">${results[i].description}</p>`;
-        //resultDiv.innerHTML += `</div></div>`;
+        //console.log(results[i].type);
+        //console.log(results[i].properties.name);
+        resultDiv.innerHTML += `<div id="destination-card" class="destination-card">`;
+        resultDiv.innerHTML += `<div class="destination-image">`;
+        resultDiv.innerHTML += `<img src="${results[i].properties.imageUrl}" alt="${results[i].properties.name}">`;
+        resultDiv.innerHTML += `<div class="image-overlay">`;
+        resultDiv.innerHTML += `<span class="location-tag">🇫🇷 Europe</span>`;
+        resultDiv.innerHTML += `</div></div>`;
+        resultDiv.innerHTML += `<div class="destination-info">`;
+        resultDiv.innerHTML += `<div class="city-header">`;
+        resultDiv.innerHTML += `<h3 class="city-name">${results[i].properties.name}</h3>`;
+        resultDiv.innerHTML += `<span class="country">France</span>`;
+        resultDiv.innerHTML += `</div>`;
+        resultDiv.innerHTML += `<p class="city-description">${results[i].properties.description}</p>`;
+        resultDiv.innerHTML += `</div></div>`;
     }
 }
