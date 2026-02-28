@@ -24,12 +24,6 @@ function searchCondition() {
     .then(response => response.json())
     .then(data => {
         const searchTerm = input.toLowerCase();
-
-        if(data.countries.find(country => country.name.toLowerCase() === input)) {
-            console.log("Country found!");
-        } else {
-            console.log("Country not found!");
-        }
         
         // Search in all cities across all countries
         const results = [];
@@ -83,24 +77,14 @@ function searchCondition() {
 }
 
 function displayResults(results) {
+    const input = document.getElementById('search_input').value;
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
+    resultDiv.innerHTML += `<div class="mySidePanel_header"><div style="padding-right: 8px;"><a href="javascript:void(0)" class="close" onclick="closeNav()">×</a></div><div><p>Search results: <strong>${input}</strong></p></div></div>`;
     //console.log(results.length);
     for (let i = 0; i < results.length; i++) {
         //console.log(results[i].type);
         //console.log(results[i].properties.name);
-        resultDiv.innerHTML += `<div id="destination-card" class="destination-card">`;
-        resultDiv.innerHTML += `<div class="destination-image">`;
-        resultDiv.innerHTML += `<img src="${results[i].properties.imageUrl}" alt="${results[i].properties.name}">`;
-        resultDiv.innerHTML += `<div class="image-overlay">`;
-        resultDiv.innerHTML += `<span class="location-tag">🇫🇷 Europe</span>`;
-        resultDiv.innerHTML += `</div></div>`;
-        resultDiv.innerHTML += `<div class="destination-info">`;
-        resultDiv.innerHTML += `<div class="city-header">`;
-        resultDiv.innerHTML += `<h3 class="city-name">${results[i].properties.name}</h3>`;
-        resultDiv.innerHTML += `<span class="country">France</span>`;
-        resultDiv.innerHTML += `</div>`;
-        resultDiv.innerHTML += `<p class="city-description">${results[i].properties.description}</p>`;
-        resultDiv.innerHTML += `</div></div>`;
+        resultDiv.innerHTML += `<div class="destination-card"><div class="destination-image"><img src="${results[i].properties.imageUrl}" alt="${results[i].properties.name}"><div class="image-overlay"><span class="location-tag">${results[i].type}</span></div></div><div class="destination-info"><div class="city-header"><h3 class="city-name">${results[i].properties.name}</h3></div><p class="city-description">${results[i].properties.description}</p></div></div>`;
     }
 }

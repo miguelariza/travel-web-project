@@ -26,7 +26,7 @@
             "description": "A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture."          },
           {
             "name": "Kyoto, Japan",
-            "imageUrl": "./assest/pexels-pixabay-161401.jpg",
+            "imageUrl": "./assets/pexels-pixabay-161401.jpg",
             "description": "Known for its historic temples, gardens, and traditional tea houses."
         }
         ]
@@ -57,7 +57,7 @@
       },
       {
         "id": 2,
-        "name": "Taj Mahal, Brazil",
+        "name": "Taj Mahal, India",
         "imageUrl": "./assets/pexels-onthecrow-30638768.jpg",
         "description": "An iconic symbol of love and a masterpiece of Mughal architecture."
       }

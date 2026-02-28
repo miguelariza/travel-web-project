@@ -27,18 +27,10 @@
             <div>
                 <input class="nav_input" type="text" id="search_input" placeholder="Enter your destination">
                 <button id="togglePanel" class="nav_btn" onclick="togglePanel()">Search</button>
-                <button class="nav_btn" id="resetSearch" onclick="resetSearch()">Reset</button>
+                <button class="nav_btn" id="resetSearch" onclick="resetSearch()">Clear</button>
             </div>
         </nav>
     </header>
-    <div id="mySidePanel" class="mySidePanel">
-        <div>
-            <div>
-                <a href="javascript:void(0)" class="close" onclick="closeNav()">×</a>
-            </div>
-            <div id="result"></div>
-        </div>
-    </div>
     <main>
         <section id="home">
             <h1>The World Is Your Playground. Experience It Extravagantly.</h1>
@@ -146,6 +138,13 @@
             </ul>
         </nav>
     </footer>
+    
+    <div id="mySidePanel" class="mySidePanel">
+            <!-- <div class="mySidePanel_header">
+                <a href="javascript:void(0)" class="close" onclick="closeNav()">×</a><p>Search results: </p>
+            </div> -->
+            <div id="result" class="destinations-grid"></div>
+    </div>
     <script src="./travel_recommendation.js"></script>
 </body>
 </html>
