@@ -45,7 +45,7 @@ function searchCondition() {
                     properties: temple
                 });
             });
-        } else if (searchTerm === "city" || searchTerm === "cities") {
+        } else if (searchTerm === "country" || searchTerm === "countries") {
             data.countries.forEach(country => {
                 country.cities.forEach(city => {
                     results.push({
