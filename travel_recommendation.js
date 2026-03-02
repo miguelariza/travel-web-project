@@ -23,10 +23,39 @@ function searchCondition() {
     fetch('travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
-        const searchTerm = input.toLowerCase();
+        const searchTerm = input.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").trim().toLowerCase();
         
         // Search in all cities across all countries
         const results = [];
+
+        if (searchTerm === "beach" || searchTerm === "beaches") {
+            data.beaches.forEach(beach => {
+                //console.log('Found temple:', beach.name);
+                results.push({
+                    type: "beach",
+                    properties: beach
+                });
+            });
+            //console.log(results);
+        } else if (searchTerm === "temple" || searchTerm === "temples") {
+            data.temples.forEach(temple => {
+                //console.log('Found temple:', beach.name);
+                results.push({
+                    type: "temple",
+                    properties: temple
+                });
+            });
+        } else if (searchTerm === "city" || searchTerm === "cities") {
+            data.countries.forEach(country => {
+                country.cities.forEach(city => {
+                    results.push({
+                        //country: country.name,
+                        type: "city",
+                        properties: city
+                    });
+                });
+            });
+        }
         
         data.countries.forEach(country => {
             const matchingCities = country.cities.filter(city => 
@@ -36,7 +65,7 @@ function searchCondition() {
             matchingCities.forEach(city => {
                 results.push({
                     //country: country.name,
-                    type: "city", 
+                    type: "city",
                     properties: city
                 });
             });
